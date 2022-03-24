@@ -18,4 +18,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     EStackEmpty.h \
     EStackExeption.h \
+    Person.h \
+    PersonKeeper.h \
     Stack.h
