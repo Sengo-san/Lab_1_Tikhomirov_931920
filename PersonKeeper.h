@@ -5,12 +5,12 @@
 #include "Stack.h"
 #include <fstream>
 
-//класс, хранящий личности в стэке, реализован на основе паттерна Singleton (одиночка)
+//класс, хранящий личности в стеке, реализован на основе паттерна Singleton (одиночка)
 class PersonKeeper
 {
 public:
     static PersonKeeper& Instance();//создание и хранение единственного экземпляра класса
-    void readPersons(std::ifstream&); //метод, считывающий дичности из файлового потока в стэк
+    void readPersons(std::ifstream&); //метод, считывающий дичности из файлового потока в стек
     void writePersons (std::ofstream&); //метод, записывающий дичности из стека в файл
 
 private:
@@ -19,7 +19,7 @@ private:
     PersonKeeper(PersonKeeper const&); //конструктор копирования
     PersonKeeper& operator= (PersonKeeper const&);//оператор присвоения
 
-    Stack<Person> nameStack_; //стэк личностей (объектов класса Person)
+    Stack<Person> nameStack_; //стек личностей (объектов класса Person)
 };
 
 #endif // PERSONKEEPER_H

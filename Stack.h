@@ -3,7 +3,7 @@
 
 #include "EStackEmpty.h"
 
-//класс стэк
+//класс стек
 template <class T> class Stack
 {
 public:
@@ -35,7 +35,7 @@ template <class T> void Stack<T>::push(const T &val)
 
 template <class T> const T Stack<T>::pop()
 {
-    //обрабатываем исключение, связанное с извлечением из пустого стэка
+    //обрабатываем исключение, связанное с извлечением из пустого стека
     if (top_ == nullptr){
         throw EStackEmpty();
     }
@@ -56,7 +56,7 @@ template <class T> int Stack<T>::getSize()
 template <class T> void Stack<T>::clear()
 {
 
-    while (top_ !=nullptr){  // пока стэк не станет пуст
+    while (top_ !=nullptr){  // пока стек не станет пуст
         Node* temp = top_;
         top_ = top_->prev;    //смещаем указатель вершины вниз
         delete temp;    //удаляем старую вершину

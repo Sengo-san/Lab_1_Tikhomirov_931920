@@ -33,6 +33,7 @@ void PersonKeeper::readPersons(std::ifstream& ifstream)
        nameStack_.push(Person (stringVector[0], stringVector[1], stringVector[2]));//кладем в стек экземпляр класса Person
         else if (wordCount == 2)//если в строке 2 слова
         nameStack_.push(Person (stringVector[0], stringVector[1], "")); //кладем в стек экземпляр класса Person без отчества
+       //Строки, состоящие из одного слова будут проигнорированы
     }
 }
 
