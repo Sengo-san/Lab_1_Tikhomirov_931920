@@ -5,27 +5,26 @@
 
 using namespace std;
 
-#include <EStackEmpty.h>
-#include <Stack.h>
+#include <PersonKeeper.h>
 
-
+//Тестирование 2 части лабораторной
 int main(int argc, char *argv[])
 {
+   //открываем файл на чтение
 
-       string str1 = "Ivan";
-       string str2 = "Igor";
+    ifstream instr ("NameSource.txt");
+    if (!instr)
+        cout << "Opening file error"<<endl;
+    //считываем из файла в стек
+    PersonKeeper::Instance().readPersons(instr);
+    instr.close();
 
-       Stack <string> names;  //создаем стек строк
+   //открываем файл на запись
+    ofstream outstr ("NameReciever.txt");
+    //записываем из стека в файл
+    PersonKeeper::Instance().writePersons(outstr);
+    outstr.close();
 
-       names.push(str1);//кладем строки в стек
-       names.push(str2);
+    return 0;
 
-       cout << names.getSize() << endl; //получаем размер
-
-       cout << names.pop() << endl;  //извлекаем элеленты
-       cout << names.pop() << endl;
-
-       cout << names.pop() << endl;   //пытаемся извлечь из пустого стека, получаем ошибку
-
-       return 0;
 }
