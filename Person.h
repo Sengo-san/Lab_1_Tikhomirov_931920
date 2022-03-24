@@ -8,21 +8,21 @@ class Person
 {
 public:
     Person(); //конструктор по умолчанию
-    Person (std::string _last_name, std::string _first_name, std::string _patronymic); //конструктор от "фамилия", "имя", "отчество" (отчества нет - пустая строка)
+    Person (std::string lastName, std::string firstName, std::string patronymic); //конструктор от "фамилия", "имя", "отчество" (отчества нет - пустая строка)
     Person(const Person&);//конструктор копирования
 
     void setLastName(const std::string&); //метод, устанавливающий фамилию личности
     void setFirstame(const std::string&); //метод, устанавливающий имя личности
     void setPatronymic(const std::string&); //метод, устанавливающий отчество личности
-    const std::string& getLastName() const { return last_name; } //метод возвращающий фамилию личности
-    const std::string& getFirstName() const { return first_name; } //метод возвращающий имя личности
-    const std::string& getPatronymic() const { return patronymic; } //метод возвращающий отчество личности
+    const std::string& getLastName() const { return lastName_; } //метод возвращающий фамилию личности
+    const std::string& getFirstName() const { return firstName_; } //метод возвращающий имя личности
+    const std::string& getPatronymic() const { return patronymic_; } //метод возвращающий отчество личности
 
 private:
-    long key; //ключ
-    std::string last_name; //содержит фамилию
-    std::string first_name; //содержит имя
-    std::string patronymic; //содержит отчество
+    long key_; //ключ
+    std::string lastName_; //содержит фамилию
+    std::string firstName_; //содержит имя
+    std::string patronymic_; //содержит отчество
 };
 
 #endif // PERSON_H

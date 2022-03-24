@@ -2,35 +2,35 @@
 
 Person::Person() {}
 
-Person::Person (std::string _last_name, std::string _first_name, std::string _patronymic)
+Person::Person (std::string lastName, std::string firstName, std::string patronymic)
 {
     //устанавливаем член-данные аргументами конструкора
-    last_name = _last_name;
-    first_name = _first_name;
-    patronymic = _patronymic;
+    lastName_ = lastName;
+    firstName_ = firstName;
+    patronymic_ = patronymic;
 }
 
  Person::Person(const Person& p)
  {
      //устанавливаем член-данные данными существующего экземпляра класса
-     first_name = p.first_name;
-     last_name = p.last_name;
-     patronymic = p.patronymic;
-     key = p.key;
+     firstName_ = p.firstName_;
+     lastName_ = p.lastName_;
+     patronymic_ = p.patronymic_;
+     key_ = p.key_;
  }
 
-void Person::setFirstame(const std::string & _first_name)
+void Person::setFirstame(const std::string& firstName)
 {
-    first_name = _first_name; //устанавливаем имя
+    firstName_ = firstName; //устанавливаем имя
 }
 
-void Person::setLastName(const std::string & _last_name)
+void Person::setLastName(const std::string& lastName)
 {
-    last_name = _last_name; //устанавливаем фамилию
+    lastName_ = lastName; //устанавливаем фамилию
 }
 
-void Person::setPatronymic(const std::string & _patronymic)
+void Person::setPatronymic(const std::string& patronymic)
 {
-    patronymic = _patronymic; //устанавливаем отчество
+    patronymic_ = patronymic; //устанавливаем отчество
 }
 

@@ -19,7 +19,7 @@ private:
     PersonKeeper(PersonKeeper const&); //конструктор копирования
     PersonKeeper& operator= (PersonKeeper const&);//оператор присвоения
 
-    Stack<Person> nameStack; //стэк личностей (объектов класса Person)
+    Stack<Person> nameStack_; //стэк личностей (объектов класса Person)
 };
 
 #endif // PERSONKEEPER_H

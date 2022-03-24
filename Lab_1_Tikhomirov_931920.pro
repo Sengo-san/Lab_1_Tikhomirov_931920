@@ -23,3 +23,7 @@ HEADERS += \
     Person.h \
     PersonKeeper.h \
     Stack.h
+
+DISTFILES += \
+    NameReciever.txt \
+    NameSource.txt
