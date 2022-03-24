@@ -7,7 +7,8 @@
 template <class T> class Stack
 {
 public:
-    void push(const T &value);  //метод, помещающий объект в стек
+
+    void push(const T& value);  //метод, помещающий объект в стек
     const T pop();  //метод, извлекающий объект из стека
     int getSize(); //получение размерности стека
     void clear(); //очистка стека
@@ -17,47 +18,47 @@ private:
     //стуктура, описывающая элемент стека
     struct Node
     {
-        const T value_; //хранимое значение элемета стека
+        const T value; //хранимое значение элемета стека
         Node* prev = nullptr; //указатель на предыдущий элемент стека
     };
 
-    Node* top = nullptr; //указатель на вершину стека
-    int size = 0; //размерность стека
+    Node* top_ = nullptr; //указатель на вершину стека
+    int size_  = 0; //размерность стека
 };
 
-template <class T> void Stack<T>::push(const T &value)
+template <class T> void Stack<T>::push(const T &val)
 {
-    Node* new_node = new Node {value, top}; //создаем узел, предыдущий ему узел - нынешняя вершина
-    top = new_node; //вершиной теперь является новый узел
-    size ++; //увеличиваем размерность
+    Node* newNode = new Node {val, top_};
+    top_ = newNode;
+    size_ ++; //увеличиваем размерность
 }
 
 template <class T> const T Stack<T>::pop()
 {
     //обрабатываем исключение, связанное с извлечением из пустого стэка
-    if (top == nullptr){
+    if (top_ == nullptr){
         throw EStackEmpty();
     }
 
-    const T value = top->value_; //извлекаем значение с вершины
-    Node* temp = top;   //создаем временный указатель на вершину
-    top = top->prev; //смещаем указатель на вершину
+    const T val = top_->value; //извлекаем значение с вершины
+    Node* temp = top_;
+    top_ = top_->prev; //смещаем указатель на вершину
     delete temp; //удаляем старую вершину
-    size--; //уменьшаем размерность
-    return value;   //возвращаем извлеченное значение
+    size_ --;
+    return val;
 }
 
 template <class T> int Stack<T>::getSize()
 {
-    return size;
+    return size_;
 }
 
 template <class T> void Stack<T>::clear()
 {
 
-    while (top !=nullptr){  // пока стэк не станет пуст
-        Node* temp = top;
-        top = top->prev;    //смещаем указатель вершины вниз
+    while (top_ !=nullptr){  // пока стэк не станет пуст
+        Node* temp = top_;
+        top_ = top_->prev;    //смещаем указатель вершины вниз
         delete temp;    //удаляем старую вершину
     }
 
