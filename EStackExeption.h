@@ -8,16 +8,19 @@ class EStackException
 {
   public:
 
-    EStackException (const char *msg) //конструктор с аргументом-строкой
+    EStackException (const char* msg) //конструктор с аргументом-строкой
     {
         message = new char[strlen(msg)+1];
         strcpy (message, msg);
     }
 
+
+
     ~EStackException()  //деструктор
     {
         delete message;
     }
+
 
 
     const char *what()  //метод, возвращающий диагностическое сообщение
@@ -26,7 +29,7 @@ class EStackException
     }
 
 private:
-    char *message; //содержит сообщение об ошибке
+    char* message; //содержит сообщение об ошибке
 };
 
 
