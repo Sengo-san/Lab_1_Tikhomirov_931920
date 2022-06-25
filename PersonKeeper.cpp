@@ -9,7 +9,7 @@ PersonKeeper::~PersonKeeper() {};
 
 PersonKeeper& PersonKeeper::Instance()
 {
-    static PersonKeeper instance_; //создаем (если еще не было создано) член данное
+    static PersonKeeper instance_; //создаем (или возвращаем) экземпляр PersonKeeper
     return instance_;
 }
 
@@ -32,7 +32,7 @@ void PersonKeeper::readPersons(std::ifstream& ifstream)
        if (wordCount == 3)//если в строке 3 слова (отчество есть)
        nameStack_.push(Person (stringVector[0], stringVector[1], stringVector[2]));//кладем в стек экземпляр класса Person
         else if (wordCount == 2)//если в строке 2 слова
-        nameStack_.push(Person (stringVector[0], stringVector[1], "")); //кладем в стек экземпляр класса Person без отчества
+        nameStack_.push(Person (stringVector[0], stringVector[1])); //кладем в стек экземпляр класса Person без отчества
        //Строки, состоящие из одного слова будут проигнорированы
     }
 }

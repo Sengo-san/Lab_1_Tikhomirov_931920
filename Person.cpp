@@ -1,7 +1,5 @@
 #include "Person.h"
 
-Person::Person() {}
-
 Person::Person (std::string lastName, std::string firstName, std::string patronymic)
 {
     //устанавливаем член-данные аргументами конструкора

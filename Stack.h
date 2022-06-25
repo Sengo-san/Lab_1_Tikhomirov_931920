@@ -35,7 +35,7 @@ template <class T> void Stack<T>::push(const T &val)
 
 template <class T> const T Stack<T>::pop()
 {
-    //обрабатываем исключение, связанное с извлечением из пустого стека
+    //выкидываем исключение, связанное с извлечением из пустого стека
     if (top_ == nullptr){
         throw EStackEmpty();
     }
@@ -62,6 +62,7 @@ template <class T> void Stack<T>::clear()
         delete temp;    //удаляем старую вершину
     }
 
+        size_ = 0; //обнуляем размер
 }
 
 template <class T> Stack<T>::~Stack<T>()

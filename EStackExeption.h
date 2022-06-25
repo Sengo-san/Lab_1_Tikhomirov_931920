@@ -14,14 +14,10 @@ class EStackException
         strcpy (message, msg);
     }
 
-
-
     ~EStackException()  //деструктор
     {
         delete message;
     }
-
-
 
     const char *what()  //метод, возвращающий диагностическое сообщение
     {

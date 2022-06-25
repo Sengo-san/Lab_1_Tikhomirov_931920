@@ -7,8 +7,7 @@
 class Person
 {
 public:
-    Person(); //конструктор по умолчанию
-    Person (std::string lastName, std::string firstName, std::string patronymic); //конструктор от "фамилия", "имя", "отчество" (отчества нет - пустая строка)
+    Person (std::string lastName = "", std::string firstName = "", std::string patronymic = ""); //конструктор от "фамилия", "имя", "отчество" (отчества нет - пустая строка)
     Person(const Person&);//конструктор копирования
 
     void setLastName(const std::string&); //метод, устанавливающий фамилию личности

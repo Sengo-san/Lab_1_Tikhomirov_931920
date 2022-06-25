@@ -5,6 +5,7 @@
 #include "Stack.h"
 #include <fstream>
 
+
 //класс, хранящий личности в стеке, реализован на основе паттерна Singleton (одиночка)
 class PersonKeeper
 {
